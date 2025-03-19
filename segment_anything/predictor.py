@@ -132,7 +132,15 @@ class SamPredictor:
         """
         if not self.is_image_set:
             raise RuntimeError("An image must be set with .set_image(...) before mask prediction.")
-
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        print("FOOOOUND")
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
         # Transform input prompts
         coords_torch, labels_torch, box_torch, mask_input_torch = None, None, None, None
         if point_coords is not None:
@@ -217,7 +225,16 @@ class SamPredictor:
             points = (point_coords, point_labels)
         else:
             points = None
-
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        print("FOOOOUND")
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        
         # Embed prompts
         sparse_embeddings, dense_embeddings = self.model.prompt_encoder(
             points=points,
