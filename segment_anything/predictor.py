@@ -31,6 +31,16 @@ class SamPredictor:
         self.transform = ResizeLongestSide(sam_model.image_encoder.img_size)
         self.reset_image()
 
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        print("FOOOOUND __init__")
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+
     def set_image(
         self,
         image: np.ndarray,
@@ -58,6 +68,16 @@ class SamPredictor:
         input_image_torch = input_image_torch.permute(2, 0, 1).contiguous()[None, :, :, :]
 
         self.set_torch_image(input_image_torch, image.shape[:2])
+
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        print("FOOOOUND set_image")
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
 
     @torch.no_grad()
     def set_torch_image(
@@ -136,7 +156,7 @@ class SamPredictor:
         print("-"*20)
         print("-"*20)
         print("-"*20)
-        print("FOOOOUND")
+        print("FOOOOUND predict")
         print("-"*20)
         print("-"*20)
         print("-"*20)
@@ -229,7 +249,7 @@ class SamPredictor:
         print("-"*20)
         print("-"*20)
         print("-"*20)
-        print("FOOOOUND")
+        print("FOOOOUND predict_torch")
         print("-"*20)
         print("-"*20)
         print("-"*20)
@@ -269,6 +289,15 @@ class SamPredictor:
             raise RuntimeError(
                 "An image must be set with .set_image(...) to generate an embedding."
             )
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        print("FOOOOUND get_image_embedding")
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
+        print("-"*20)
         assert self.features is not None, "Features must exist if an image has been set."
         return self.features
 
